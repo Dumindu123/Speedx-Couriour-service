@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Track Courier - Sri Lanka</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <link rel="stylesheet" href="track.css">
+</head>
+<body>
+
+  <header class="top">
+    <div class="brand">
+      <div class="logo"><i class="fa-solid fa-location-crosshairs"></i></div>
+      <div>
+        <div class="name">Track Courier</div>
+        <div class="sub">Sri Lanka live map tracking</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="ghost" onclick="centerSriLanka()"><i class="fa-solid fa-globe"></i> Sri Lanka</button>
+      <button class="ghost" onclick="centerOnUser()"><i class="fa-solid fa-location-dot"></i> Me</button>
+      <button class="ghost danger" onclick="window.close()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Tracking</h2>
+      <p class="muted">Tracking Number: <b id="displayTrackingNo">—</b></p>
+
+      <div class="cards">
+        <div class="info-card">
+          <div class="ic"><i class="fa-solid fa-truck-fast"></i></div>
+          <div>
+            <div class="label">Courier Status</div>
+            <div class="value" id="statusText">Waiting...</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="ic"><i class="fa-solid fa-route"></i></div>
+          <div>
+            <div class="label">ETA</div>
+            <div class="value" id="etaText">—</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="ic"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="label">Courier Coordinates</div>
+            <div class="value" id="coordText">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <i class="fa-solid fa-circle-info"></i>
+        Live user location works on <b>HTTPS</b> or <b>localhost</b>. Tracking movement is demo simulation.
+      </div>
+    </section>
+
+    <section class="map-panel">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="track.js"></script>
+</body>
+</html>

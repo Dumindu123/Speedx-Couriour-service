@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Pickup</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="pickup.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="hero">
+    <!-- Decorative bubbles -->
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+
+    <div class="hero-top">
+      <div class="brand">
+        <div class="brand-logo"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="brand-text">
+          <div class="brand-name">PickUp</div>
+          <div class="brand-sub">Book your courier pickup in seconds</div>
+        </div>
+      </div>
+
+      <button class="ghost-btn" onclick="window.close()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Steps -->
+
+    <div class="hero-card">
+      <div class="hero-left">
+        <h1>Book a Pickup</h1>
+        <p>Select a vehicle type and enter pickup & drop locations. Fast, safe, and reliable.</p>
+
+        <div class="hero-badges">
+          <span class="badge"><i class="fa-solid fa-bolt"></i> Fast ETA</span>
+          <span class="badge"><i class="fa-solid fa-shield-halved"></i> Secure</span>
+          <span class="badge"><i class="fa-solid fa-headset"></i> 24/7 Support</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="mini-stats">
+          <div class="stat">
+            <div class="stat-num" id="etaText">—</div>
+            <div class="stat-label">ETA</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="priceText">—</div>
+            <div class="stat-label">Est. Price</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="vehicleText">—</div>
+            <div class="stat-label">Vehicle</div>
+          </div>
+        </div>
+
+        <div class="tip">
+          <i class="fa-solid fa-circle-info"></i>
+          Tip: Choose <b>Bike</b> for documents & small parcels.
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="wrap">
+
+    <!-- VEHICLE OPTIONS -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Pickup Options</h2>
+      </div>
+      <p class="muted">Tap a vehicle to select. Prices & ETA are estimated.</p>
+
+      <div class="grid" id="vehicleGrid">
+
+        <button class="vcard popular" data-type="Bike" data-price="220" data-eta="7 min">
+          <div class="vicon"><i class="fa-solid fa-motorcycle"></i></div>
+          <div class="vinfo">
+            <div class="vtitle">Bike</div>
+            <div class="vsub">Docs • Small parcels</div>
+            <div class="vmeta">
+              <span><i class="fa-solid fa-stopwatch"></i> 7 min</span>
+              <span><i class="fa-solid fa-box"></i> 5 kg</span>
+            </div>
+          </div>
+          <div class="vright">
+            <div class="price">LKR 220+</div>
+            <div class="pill">Popular</div>
+          </div>
+          <div class="tick"><i class="fa-solid fa-check"></i></div>
+        </button>
+
+        <button class="vcard" data-type="Three-Wheeler" data-price="380" data-eta="10 min">
+          <div class="vicon"><i class="fa-solid fa-truck-pickup"></i></div>
+          <div class="vinfo">
+            <div class="vtitle">Three-Wheeler</div>
+            <div class="vsub">Medium loads</div>
+            <div class="vmeta">
+              <span><i class="fa-solid fa-stopwatch"></i> 10 min</span>
+              <span><i class="fa-solid fa-box"></i> 25 kg</span>
+            </div>
+          </div>
+          <div class="vright">
+            <div class="price">LKR 380+</div>
+          </div>
+          <div class="tick"><i class="fa-solid fa-check"></i></div>
+        </button>
+
+        <button class="vcard" data-type="Car" data-price="450" data-eta="12 min">
+          <div class="vicon"><i class="fa-solid fa-car-side"></i></div>
+          <div class="vinfo">
+            <div class="vtitle">Car</div>
+            <div class="vsub">Safe & flexible</div>
+            <div class="vmeta">
+              <span><i class="fa-solid fa-stopwatch"></i> 12 min</span>
+              <span><i class="fa-solid fa-box"></i> 35 kg</span>
+            </div>
+          </div>
+          <div class="vright">
+            <div class="price">LKR 450+</div>
+          </div>
+          <div class="tick"><i class="fa-solid fa-check"></i></div>
+        </button>
+
+        <button class="vcard" data-type="Van" data-price="650" data-eta="15 min">
+          <div class="vicon"><i class="fa-solid fa-van-shuttle"></i></div>
+          <div class="vinfo">
+            <div class="vtitle">Van</div>
+            <div class="vsub">Bulk parcels</div>
+            <div class="vmeta">
+              <span><i class="fa-solid fa-stopwatch"></i> 15 min</span>
+              <span><i class="fa-solid fa-box"></i> 100 kg</span>
+            </div>
+          </div>
+          <div class="vright">
+            <div class="price">LKR 650+</div>
+          </div>
+          <div class="tick"><i class="fa-solid fa-check"></i></div>
+        </button>
+
+        <button class="vcard" data-type="Truck" data-price="1200" data-eta="20 min">
+          <div class="vicon"><i class="fa-solid fa-truck"></i></div>
+          <div class="vinfo">
+            <div class="vtitle">Truck</div>
+            <div class="vsub">Heavy items</div>
+            <div class="vmeta">
+              <span><i class="fa-solid fa-stopwatch"></i> 20 min</span>
+              <span><i class="fa-solid fa-box"></i> 500 kg</span>
+            </div>
+          </div>
+          <div class="vright">
+            <div class="price">LKR 1200+</div>
+          </div>
+          <div class="tick"><i class="fa-solid fa-check"></i></div>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- FORM + SUMMARY -->
+    <section class="two-col">
+
+      <section class="panel">
+        <h2>Pickup Details</h2>
+        <p class="muted">Fill details to continue.</p>
+
+        <div class="form">
+          <div class="row">
+            <div class="field">
+              <label>Selected Vehicle</label>
+              <input type="text" id="selectedVehicle" placeholder="Select a vehicle above" readonly>
+            </div>
+            <div class="field">
+              <label>Pickup Date</label>
+              <input type="date" id="pickupDate">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field full">
+              <label>Pickup Address</label>
+              <input type="text" id="pickupAddress" placeholder="Eg: No 12, Galle Road, Colombo 03">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field full">
+              <label>Drop Address</label>
+              <input type="text" id="dropAddress" placeholder="Eg: Kandy City Center, Kandy">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field full">
+              <label>Package Note (optional)</label>
+              <input type="text" id="note" placeholder="Fragile / handle with care">
+            </div>
+          </div>
+
+          <button class="cta" onclick="confirmPickup()">
+            Continue to Confirm <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </section>
+
+      <aside class="panel summary">
+        <h2>Summary</h2>
+        <p class="muted">Your current selection.</p>
+
+        <div class="sum-item">
+          <span>Vehicle</span>
+          <b id="sumVehicle">—</b>
+        </div>
+        <div class="sum-item">
+          <span>ETA</span>
+          <b id="sumEta">—</b>
+        </div>
+        <div class="sum-item">
+          <span>Estimated Price</span>
+          <b id="sumPrice">—</b>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="secure">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <b>Safe Delivery</b>
+            <div class="muted small">We keep your parcel safe until drop-off.</div>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <div class="muted small">
+          </div>
+        </div>
+      </aside>
+
+    </section>
+
+  </main>
+
+  <script src="pickup.js"></script>
+</body>
+</html>

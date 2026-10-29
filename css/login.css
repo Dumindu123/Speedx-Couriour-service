@@ -1,0 +1,105 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0d6efd,#0047ab);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===============================
+   LOGIN CONTAINER
+================================ */
+.login-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:50px;
+    justify-content:center;
+    padding:30px;
+}
+
+/* ===============================
+   LOGIN CARD
+================================ */
+.login-card{
+    background:white;
+    padding:40px 35px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    width:320px;
+    text-align:center;
+}
+
+.login-card h2{
+    margin-bottom:25px;
+    color:#0d6efd;
+}
+
+.login-card input{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    outline:none;
+    transition:0.3s;
+}
+
+.login-card input:focus{
+    border-color:#0d6efd;
+}
+
+.login-card button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:#0d6efd;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-card button:hover{
+    background:#0047ab;
+}
+
+.login-card p{
+    margin-top:15px;
+    font-size:14px;
+    color:#555;
+}
+
+.login-card p a{
+    color:#0d6efd;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ===============================
+   ADMIN CARD STYLE DIFFERENT
+================================ */
+.admin-card{
+    background:#f8f9fa;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media(max-width:768px){
+    .login-container{
+        flex-direction:column;
+        gap:30px;
+    }
+}
